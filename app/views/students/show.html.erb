@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Firstname:</b>
+  <%= @student.firstname %>
+</p>
+
+<p>
+  <b>Lastname:</b>
+  <%= @student.lastname %>
+</p>
+
+<p>
+  <b>Emailaddress:</b>
+  <%= @student.emailaddress %>
+</p>
+
+<div id="floatbox">
+	<b>Registered Courses:</b><br />
+	<% @registeredcourses.each do |c| %>
+		<%= c.full_title %> <br />
+	<% end %>
+	
+	<br /><br />
+	<b>Textbooks to Purchase:</b><br />
+	<% @requiredtextbooks.each do |t| %>
+		<%= t.title %> <br />
+	<% end %>
+</div>
+
+
+
+
+
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', students_path %>
