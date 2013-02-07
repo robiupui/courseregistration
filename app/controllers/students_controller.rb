@@ -60,6 +60,7 @@ class StudentsController < ApplicationController
   # PUT /students/1.json
   def update
     @student = Student.find(params[:id])
+    params[:student][:course_ids] ||= []
 
     respond_to do |format|
       if @student.update_attributes(params[:student])
